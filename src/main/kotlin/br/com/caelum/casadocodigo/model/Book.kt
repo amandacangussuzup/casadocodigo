@@ -24,12 +24,11 @@ class Book {
     @JoinColumn(name = "publisher_id", nullable = false)
     var publisher: Publisher? = null
 
-    @Fetch(FetchMode.SELECT)
+
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-        name = "book_autor",
-        joinColumns = [JoinColumn(name = "fk_book")],
-        inverseJoinColumns = [JoinColumn(name = "fk_author")],
+        name = "book_autor"
+
     )
-    var author: List<Author>? = null
+    var author: MutableList<Author> = mutableListOf()
 }

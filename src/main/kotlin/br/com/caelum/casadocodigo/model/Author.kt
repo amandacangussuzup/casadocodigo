@@ -14,8 +14,9 @@ class Author {
     var id:Long? = null
     var name: @NotBlank String? = null
 
-    @ManyToMany(mappedBy = "author", fetch = FetchType.EAGER)
-    var book: List<Book>? = null
+    @ManyToMany(mappedBy = "author", fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
+    var book: MutableList<Book> = mutableListOf()
+
     override fun toString(): String {
         return "Author(id=$id, name=$name, book=$book)"
     }
