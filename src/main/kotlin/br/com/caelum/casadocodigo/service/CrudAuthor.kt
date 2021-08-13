@@ -1,14 +1,13 @@
-package br.com.caelum.casadocodigo.service
+package br.com.caelum.casadocodigo.service;
 
-import br.com.caelum.casadocodigo.model.Publisher
-import br.com.caelum.casadocodigo.repository.PublisherRepository
-import org.springframework.stereotype.Service
+import br.com.caelum.casadocodigo.model.Author
+import br.com.caelum.casadocodigo.repository.AuthorRepository;
+import org.springframework.stereotype.Service;
 import java.util.*
 import java.util.function.Consumer
 
-
 @Service
-class CrudPublisher(private val publisherRepository: PublisherRepository) {
+public class CrudAuthor (private val authorRepository:AuthorRepository) {
     val scanner = Scanner(System.`in`)
     private var system = true
     fun inicial() {
@@ -30,18 +29,18 @@ class CrudPublisher(private val publisherRepository: PublisherRepository) {
 
 
     private fun cadastrar(){
-        println("Publisher name: ")
+        println("Author name: ")
         scanner.nextLine()
         val name = scanner.nextLine()
-        val publisher = Publisher()
-        publisher.name = name
-        publisherRepository.save(publisher)
+        val author = Author()
+        author.name = name
+        authorRepository.save(author)
         println("Salvo")
 
     }
 
     private fun visualizar(){
-        val cargos = publisherRepository.findAll()
-        cargos.forEach(Consumer { publisher: Publisher? -> println(publisher) })
+        val author = authorRepository.findAll()
+        author.forEach(Consumer { publisher: Author? -> println(publisher) })
     }
 }

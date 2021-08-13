@@ -12,4 +12,9 @@ class Publisher {
     var id: Long? = null
     var name: @NotBlank String? = null
 
+    override fun toString(): String {
+        return "Publisher(id=$id, name=$name)"
+    }
+
+
 }

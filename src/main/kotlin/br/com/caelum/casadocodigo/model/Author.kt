@@ -16,5 +16,9 @@ class Author {
 
     @ManyToMany(mappedBy = "author", fetch = FetchType.EAGER)
     var book: List<Book>? = null
+    override fun toString(): String {
+        return "Author(id=$id, name=$name, book=$book)"
+    }
+
 
 }
