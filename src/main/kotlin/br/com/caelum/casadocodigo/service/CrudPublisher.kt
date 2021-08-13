@@ -14,10 +14,10 @@ class CrudPublisher(private val publisherRepository: PublisherRepository) {
     fun inicial() {
         while(system) {
 
-            println("Digite o autor: ")
-            println("0 - Sair")
-            println("1 - Cadastrar")
-            println("2 - Visualizar")
+            println("Please choose an option about book:  ")
+            println("0 - Break")
+            println("1 - Insert")
+            println("2 - View")
             val action = scanner.nextInt()
             when(action){
                 1 -> cadastrar()
@@ -36,7 +36,7 @@ class CrudPublisher(private val publisherRepository: PublisherRepository) {
         val publisher = Publisher()
         publisher.name = name
         publisherRepository.save(publisher)
-        println("Salvo")
+        println("Save")
 
     }
 

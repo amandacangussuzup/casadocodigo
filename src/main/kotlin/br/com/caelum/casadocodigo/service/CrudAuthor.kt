@@ -7,16 +7,16 @@ import java.util.*
 import java.util.function.Consumer
 
 @Service
-public class CrudAuthor (private val authorRepository:AuthorRepository) {
+class CrudAuthor (private val authorRepository:AuthorRepository) {
     val scanner = Scanner(System.`in`)
     private var system = true
     fun inicial() {
         while(system) {
 
-            println("Digite o autor: ")
-            println("0 - Sair")
-            println("1 - Cadastrar")
-            println("2 - Visualizar")
+            println("Please choose an option about author ")
+            println("0 - Break")
+            println("1 - Insert")
+            println("2 - View")
             val action = scanner.nextInt()
             when(action){
                 1 -> cadastrar()

@@ -19,10 +19,10 @@ class CrudBook (private val bookRepository: BookRepository, private val authorRe
     private val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
     fun inicial() {
         while (system) {
-            println("Qual acao de cargo deseja executar")
-            println("0 - Sair")
-            println("1 - Atualizar")
-            println("2 - Visualizar")
+            println("Please choose an option about book")
+            println("0 - Break")
+            println("1 - Insert")
+            println("2 - View")
             val action = scanner.nextInt()
             when (action) {
                 1 -> cadastrar()
@@ -56,7 +56,7 @@ class CrudBook (private val bookRepository: BookRepository, private val authorRe
 
         bookRepository.save(book)
 
-        println("Salvo")
+        println("Save")
 
     }
 
