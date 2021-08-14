@@ -27,7 +27,9 @@ class Book {
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-        name = "book_autor"
+        name = "book_autor",
+        joinColumns = [JoinColumn(name = "fk_book")],
+        inverseJoinColumns = [JoinColumn(name = "fk_author")],
 
     )
     var author: MutableList<Author> = mutableListOf()
